@@ -13,7 +13,7 @@ A simple Patient Registry System built using HTML, CSS, Node.js, and Express.js.
 - JS
 - Node.js
 - Express.js
-- EJS
+  
 
 ## How to Run
 
