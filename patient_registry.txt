@@ -1,0 +1,6 @@
+Name:somya gupta, Date: 2026-06-19, Disease:fever
+Name:siya, Date: 2026-06-19, Disease:fever
+Name:shreya, Date: 2026-06-03, Disease:cold
+Name:riya, Date: 2026-06-09, Disease:headache
+Name:tanisha, Date: 2026-06-04, Disease:fever
+Name:somya, Date: 2026-06-05, Disease:fever
