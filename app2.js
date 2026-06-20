@@ -17,9 +17,52 @@ app2.post("/register", (req,res) => {
  const patientData = `Name:${req.body.name}, Date: ${req.body.date}, Disease:${req.body.disease}\n`;
  console.log(patientData);
  fs.appendFileSync("patient_registry.txt",patientData);
- res.send(`<h3>${req.body.name} has been saved. Go back to main page`);
-});
+res.send(`
+<html>
+<head>
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f4f6f9;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    margin:0;
+}
 
+.box{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+h2{
+    color:#27ae60;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+    background:#3498db;
+    padding:10px 20px;
+    border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+<div class="box">
+    <h2>✅ ${req.body.name} has been saved</h2>
+    <br><br>
+    <a href="/">Back to Main Page</a>
+</div>
+</body>
+</html>
+`);
+});
 app2.get("/patients", (req,res) => {
   let patients = "";
   if (fs.existsSync("patient_registry.txt")){
@@ -29,7 +72,6 @@ app2.get("/patients", (req,res) => {
   .filter(line => line.trim() !== "")
   .map(line => `<tr><td>${line}</td></tr>`)
   .join("");
-
 res.send(`
 <!DOCTYPE html>
 <html>
